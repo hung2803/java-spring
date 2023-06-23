@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "username": "ADMIN",
+      "role": "ADMIN",
+      "password": "123456",
+      "dateOfBirth": "2023-01-31T17:00:00.000+00:00",
+      "address": null,
+      "fullName": "ADMIN",
+      "phoneNumber": "+84377106297",
+      "email": "ADMIN@gmail.com",
+      "facebook": null,
+      "information": null
+    },
+    {
+      "id": 2,
+      "username": "USER",
+      "role": "USER",
+      "password": "123456",
+      "dateOfBirth": "2023-02-03T17:00:00.000+00:00",
+      "address": null,
+      "fullName": "USER",
+      "phoneNumber": "+84377106298",
+      "email": "USER@gmail.com",
+      "facebook": null,
+      "information": null
+    }
+  ]

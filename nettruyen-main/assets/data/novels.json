@@ -1,0 +1,83 @@
+{
+    "content": [
+    {
+    "id": 1,
+    "novelsTitle": " Già Thiên",
+    "image": "https://hhhkungfu.tv/wp-content/uploads/Gia-Thien2-300x449.jpg",
+    "athor": "Vũ Phong",
+    "category" : "Tiên Hiệp, Dị Giới, Huyền Huyễn,",
+    "status": "true",
+    "star" : 5
+},
+{
+    "id": 2,
+    "novelsTitle": "Đấu La Đại Lục",
+    "image": "https://hhhkungfu.tv/wp-content/uploads/Dau-La-Dai-Luc-2-320x449.jpg",
+    "athor": "Thần Đông",
+    "category" : "Tiên Hiệp, Dị Giới, Huyền Huyễn,",
+    "status": "true",
+    "star" : 3
+},
+{
+    "id": 3,
+    "novelsTitle": " Thế Giới Hoàn Mỹ",
+    "image": "https://hhhkungfu.tv/wp-content/uploads/2022/01/The-Gioi-Hoan-My-320x449.jpg",
+    "athor": "Thiên Tàm Thổ Đậu",
+    "category" : "Tiên Hiệp, Dị Giới, Huyền Huyễn,",
+    "status": "true",
+    "star" : 2
+},
+{
+    "id": 4,
+    "novelsTitle": "Thôn Phệ Tinh Không",
+    "image": "https://hhhkungfu.tv/wp-content/uploads/2022/01/Thon-Phe-Tinh-Khong-320x449.jpg",
+    "athor": "Thiên Tàm Thổ Đậu",
+    "category" : "Tiên Hiệp, Dị Giới, Huyền Huyễn,",
+    "status": "true",
+    "star" : 4
+},
+{
+    "id": 5,
+    "novelsTitle": " Tinh Thần Biến Phần 5",
+    "image": "https://hhhkungfu.tv/wp-content/uploads/Tinh-Than-Bien-5-300x449.jpg",
+    "athor": "Cô Đơn Địa Phi",
+    "category" : "Tiên Hiệp, Huyền Huyễn,",
+    "status": "true",
+    "star" : 5
+},
+{
+    "id": 6,
+    "novelsTitle": "Ở Rể",
+    "image": "https://hhhkungfu.tv/wp-content/uploads/O-Re-300x449.jpg",
+    "athor": "Mặc Hương Đồng",
+    "category" : "Huyền Huyễn, Linh Dị, Đam Mỹ,",
+    "status": "true",
+    "star" : 1
+}
+],
+"pageable": {
+    "sort": {
+        "sorted": true,
+        "unsorted": false,
+        "empty": false
+    },
+    "pageNumber": 0,
+    "pageSize": 6,
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+},
+"totalPages": 3,
+"totalElements": 15,
+"last": false,
+"numberOfElements": 6,
+"sort": {
+    "sorted": true,
+    "unsorted": false,
+    "empty": false
+},
+"number": 0,
+"first": true,
+"size": 6,
+"empty": false
+}
