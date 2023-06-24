@@ -1,4 +1,4 @@
-let baseUrlAuth = "http://localhost:8686/api/v1";
+let baseUrlAuth = "http://192.168.1.175:8686/api/v1";
 
 function Account(username, password) {
     this.username = username;

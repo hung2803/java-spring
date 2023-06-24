@@ -19,6 +19,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Optional;
 
@@ -56,23 +57,26 @@ public class NovelstService implements INovelsService {
     }
 
     public void checkRatting(){
+        DecimalFormat df = new DecimalFormat("0.0");
         List<Novels> novelsList = getAll();
-        Novels novels = new Novels();
-        for (int i = 0; i < novelsList.size(); i++){
-            novels = getById(novelsList.get(i).getId());
-            List<ReviewsNovels> reviewsNovels = reviewNovelsRepository.findReviewsNovelsById(novelsList.get(i).getId());
-            if(reviewsNovels != null){
-                int total = 0;
-                for (int j = 0; j < reviewsNovels.size(); j++){
-                    if (reviewsNovels.get(j).getRating() != ""){
-
-                        total += Integer.parseInt(reviewsNovels.get(j).getRating());
+        if (novelsList.size() > 0){
+            Novels novels = new Novels();
+            for (int i = 0; i < novelsList.size(); i++){
+                novels = getById(novelsList.get(i).getId());
+                List<ReviewsNovels> reviewsNovels = reviewNovelsRepository.findReviewsNovelsById(novelsList.get(i).getId());
+                if (reviewsNovels.size() > 0){
+                    double total = 0;
+                    for (int j = 0; j < reviewsNovels.size(); j++){
+                        if (reviewsNovels.get(j).getRating() != ""){
+                            total += Integer.parseInt(reviewsNovels.get(j).getRating());
+                        }
                     }
+                    total = total / reviewsNovels.size();
+                    novels.setTotalRating(Double.parseDouble(df.format(total).replace(",",".")));
                 }
-                novels.setTotalRating((double) (total / reviewsNovels.size()));
             }
+            novelsRepository.save(novels);
         }
-        novelsRepository.save(novels);
     }
 
     @Override

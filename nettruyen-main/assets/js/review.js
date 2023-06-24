@@ -8,7 +8,7 @@ function CreatReview(id, content, rating, accountId, novelsId, datePost) {
   }
 
 
-let baseUrlReviewNovels = "http://localhost:8686/api/v1/review";
+let baseUrlReviewNovels = "http://192.168.1.175:8686/api/v1/review";
 
 function addReview(){
     let novelsReviewId = $("#Novels-Review-Id").val()
@@ -46,6 +46,7 @@ function addReview(){
         success: function(res){
           $('#modalReview').modal('hide')
           getlistNovels();
+          removeStarReview();
         }
       });
     }

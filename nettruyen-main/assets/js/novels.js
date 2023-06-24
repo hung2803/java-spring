@@ -10,7 +10,7 @@ let pageNumber = 1;
 let novelsList = [];
 
 
-let baseUrlNovels = "http://localhost:8686/api/v1/novels";
+let baseUrlNovels = "http://192.168.1.175:8686/api/v1/novels";
 
 
 
@@ -93,7 +93,7 @@ function getAllNovels(){
       for(var i = 0; i<data.length; i++){
          $('#image-novels-header').append(
           `<div id="header-`+i+`" class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-            <img style="height: 100%;"  src="`+ data[i].image +`" class="img-fluid mx-auto d-block" alt="img`+(i+1)+`">
+            <img style="height: 300px;"  src="`+ data[i].image +`" class="img-fluid mx-auto d-block" alt="img`+(i+1)+`">
             <div class="carousel-caption d-none d-md-block">
               <p class="font-weight-bold"> `+ data[i].novelsTitle+`</p>
             </div>
@@ -135,7 +135,7 @@ function fillNovelsToTable(data){
         </div>
         </div> `
       }else {
-        element = `   <div class="col-l-3 col-s-6 mt-4">
+        element = `   <div class="col-lg-4 col-s-6 mt-4">
         <div class="item-comic">
             <div class="img-wrap-update" style="position: relative;">
                 <a href="">
@@ -145,13 +145,12 @@ function fillNovelsToTable(data){
                     </div>
                 </a>
             </div>
-            <div class="comic-info">
-            <a href="https://truyenfull.vn/me-vo-khong-loi-ve-982891/chuong-1/">
-            <button class="btn btn-success p-1" type="button" >Đọc Truyện</button>
-            </a>
-              
-              <button class="btn btn-danger p-1" type="button" onclick="reviewer(`+ data[i].id + `)" >Đánh Giá</button>
-              <h7 class="pl-3">`+ data[i].totalRating + `<i class="fa fa-star text-warning" aria-hidden="true"></i></h7>
+            <div class="comic-info mt-2">
+              <a href="https://truyenfull.vn/me-vo-khong-loi-ve-982891/chuong-1/">
+                <button style="font-size: 12px" class="btn btn-success" type="button" >Đọc Truyện</button>
+              </a>
+              <button class="btn btn-danger" style="font-size: 12px" type="button" onclick="reviewer(`+ data[i].id + `)" >Đánh Giá</button>
+              <p style="float: right">`+ data[i].totalRating + `<i class="fa fa-star text-warning" aria-hidden="true"></i></p>
             </div>
         </div>
         </div> `
@@ -163,7 +162,7 @@ function fillNovelsToTable(data){
 }
 
 function reviewer(novelsId){
-  removeStarReview()
+  setStarReview(1)
   let accountId = localStorage.getItem("id");
   $.ajax({
     url: baseUrlReviewNovels + "/" + accountId + "/" + novelsId,
@@ -284,6 +283,7 @@ function deleteNovels() {
       $('#modalAddAndUpateNovels').modal('hide')
       showAlrtSuccess();
       getlistNovels();
+      getAllNovels();
     }
   });
 
@@ -354,6 +354,4 @@ $("#novelsId-update").empty().append(`<input type="text" hidden id="novelsId" va
       $('#modalAddAndUpateNovels').modal('show')
     }
   });
-
-  
 }

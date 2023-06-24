@@ -61,6 +61,7 @@ function setStarReview(id){
   for (let i = 0; i < id; i++){
     $('#star-'+ (i +1)).removeClass('fa-star-o')
     $('#star-'+ (i +1)).addClass('fa-star')
+    $('#star-'+ i).val(id)
     starId = id;
   }
 }
